@@ -1,6 +1,8 @@
 #ifndef LIBRARY_H
 #define LIBRARY_H
 
-// Remove this comment and put your function prototypes here
+#include <stddef.h>
+
+size_t my_strlen(const char *str);
 
 #endif

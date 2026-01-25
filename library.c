@@ -1,16 +1,10 @@
-#include <stdio.h>
+#include <stddef.h>
 
-int main() {
-    char *str = "banana";
-    printf("Length of string 'banana': %d\n", strlen(str));
-}
-
-int strlen(const char *str) {
-    int length = 0;
+size_t my_strlen(const char *str) {
+    size_t length = 0;
     while (*str != '\0') {
         str++;
         length++;
     }
     return length;
 }
-
