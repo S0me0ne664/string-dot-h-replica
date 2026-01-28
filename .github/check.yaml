@@ -1,0 +1,19 @@
+name: C Library Test
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Compile
+      # Wir kompilieren die Library und den Test zusammen
+      run: gcc -Wall -Wextra library.c test.c -o test_runner
+
+    - name: Run Tests
+      # Hier wird das Programm tatsächlich gestartet
+      run: ./test_runner
